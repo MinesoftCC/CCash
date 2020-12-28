@@ -6,9 +6,9 @@
 
 int main(int argc, char *argv[])
 {
-        if (argc != 2)
+        if (argc != 3)
         {
-                std::cout << "Usage: sudo ./CCash <bank password>\n";
+                std::cout << "Usage: sudo ./CCash <bank password> <run in background (true or false)>\n";
                 return 0;
         }
         if (geteuid() != 0)
@@ -19,7 +19,12 @@ int main(int argc, char *argv[])
         std::cout << "process started, PID: " << getpid() << "\n\n";
         auto primary_bank = std::make_shared<BankAPI>(argv[1]);
         app().setLogPath("./").setLogLevel(trantor::Logger::kDebug).addListener("0.0.0.0", 80).registerController(primary_bank);
-        //app().enableRunAsDaemon();
+
+        if (argv[2] == "true")
+        {
+                app().enableRunAsDaemon();
+        }
+
         auto handlerInfo = app().getHandlersInfo();
         for (auto &info : handlerInfo)
         {
@@ -56,5 +61,3 @@ int main(int argc, char *argv[])
 
         return 0;
 }
-
-//TODO: precompiled binaries
