@@ -90,3 +90,20 @@ if you wanted to you could have a seperate server full of CC webserver programs 
 ```
 
 if you want to make a connected service for this webserver then check out ```http://127.0.0.1/BankAPI/help``` for a list of the methods and there description
+**Commands**
+```
+/BankAPI/admin/close/{pass} (POST)
+/BankAPI/admin/save/{pass} (POST)
+/BankAPI/help (GET)
+/BankAPI/admin/adduser/{name}/{pass}/{admin_pass} (POST)
+/BankAPI/admin/deluser/{id}/{admin_pass} (POST)
+/BankAPI/sendfunds/{from}/{to}/{amount}/{cred_id}/{from_pass} (POST)
+/BankAPI/addaccount/{account_name}/{owner_id}/{owner_pass} (POST)
+/BankAPI/admin/addaccount/{account_name}/{balance}/{owner_id}/{admin_pass} (POST)
+/BankAPI/delaccount/{account_name}/{cred_id}/{pass} (POST)
+/BankAPI/addperm/{account_name}/{new_id}/{perm}/{cred_id}/{cred_pass} (POST)
+/BankAPI/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass} (POST)
+/BankAPI/aranked (GET)
+/BankAPI/uranked (GET)
+/BankAPI/vpass/{id}/{pass} (POST)
+```
