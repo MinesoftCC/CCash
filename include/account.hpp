@@ -9,8 +9,8 @@ private:
     uint32_t balance;
 
 public:
-    phmap::node_hash_map<uint16_t, Clearance> user_certs{{0, Clearance::Admin}}; //Bank owner backdoor
-
+    phmap::flat_hash_map<uint16_t, Clearance> user_certs; //Bank owner backdoor
+    Account(uint32_t balance) : balance(balance) {}
     Account(uint32_t balance, uint16_t owner) : balance(balance)
     {
         user_certs.emplace(owner, Clearance::Admin);
@@ -26,5 +26,19 @@ public:
     void AddBal(uint32_t val)
     {
         balance += val;
+    }
+
+    Json::Value Serialize() const
+    {
+        Json::Value res;
+        res["balance"] = balance;
+
+        Json::Value temp;
+        for (const auto &c : user_certs)
+        {
+            temp[c.first] = (int)c.second;
+        }
+        res["user_certs"] = temp;
+        return res;
     }
 };
