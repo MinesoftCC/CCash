@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         auto primary_bank = std::make_shared<BankAPI>(argv[1]);
         app().setLogPath("./").setLogLevel(trantor::Logger::kDebug).addListener("0.0.0.0", 80).registerController(primary_bank);
 
-        if (argv[2] == "true")
+        if (!std::strncmp(argv[2], "true", 4))
         {
                 app().enableRunAsDaemon();
         }
