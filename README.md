@@ -78,9 +78,8 @@ if you wanted to you could have a seperate server full of CC webserver programs 
 
 :sparkles:implemented:
 ```
-* Leaderboard, this just basically continually calls uranked. 
-* ATM for exchanging a chosen resource like diamonds or netherite and bank currency, 
-Note:For this to work you have to setup an ATM account for the turtle to use
+* Leaderboard, this just basically continually calls uranked
+* ATM for exchanging a chosen resource like diamonds or netherite and bank currency
 * Market, Jolly is working on implementing a market, https://github.com/STBoyden/market-api
 ```
 :construction: just ideas:
