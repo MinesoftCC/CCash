@@ -21,14 +21,14 @@ public:
   void AddAccount(reqArgs, const std::string &, uint16_t, const std::string &);
   void AdminAddAccount(reqArgs, const std::string &, uint32_t, uint16_t, const std::string &);
   void DelAccount(reqArgs, const std::string &, uint16_t, const std::string &);
-  void AddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass);
-  void DelPerm(reqArgs, const std::string &account_name, uint16_t target_id, uint16_t cred_id, const std::string &cred_pass);
+  void AddPerm(reqArgs, const std::string &, uint16_t, uint8_t, uint16_t, const std::string &);
+  void DelPerm(reqArgs, const std::string &, uint16_t, uint16_t, const std::string &);
   void AccountsRanked(reqArgs) const;
   void UsersRanked(reqArgs) const;
-  void FindUser(reqArgs, const std::string &name) const;
-  void ListPerms(reqArgs, const std::string &account_name) const;
-  void ListAccounts(reqArgs, uint16_t id) const;
-  void Total(reqArgs, uint16_t id) const;
+  void FindUser(reqArgs, const std::string &) const;
+  void ListPerms(reqArgs, const std::string &) const;
+  void ListAccounts(reqArgs, uint16_t) const;
+  void Total(reqArgs, uint16_t) const;
   void VerifyPassword(reqArgs, uint16_t, const std::string &) const;
 
   METHOD_LIST_BEGIN
@@ -45,6 +45,10 @@ public:
   METHOD_ADD(BankAPI::DelPerm, "/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass}", Post);
   METHOD_ADD(BankAPI::AccountsRanked, "/aranked", Get);
   METHOD_ADD(BankAPI::UsersRanked, "/uranked", Get);
+  METHOD_ADD(BankAPI::FindUser, "/finduser/{username}", Get);
+  METHOD_ADD(BankAPI::ListPerms, "/listperms/{account_name}", Get);
+  METHOD_ADD(BankAPI::ListAccounts, "/listaccounts/{id}", Get);
+  METHOD_ADD(BankAPI::Total, "/total/{id}", Get);
   METHOD_ADD(BankAPI::VerifyPassword, "/vpass/{id}/{pass}", Post);
   METHOD_LIST_END
 };
