@@ -11,6 +11,7 @@ uses https://github.com/an-tao/drogon for webserver/logging stuff
 ## Build
 
 ```
+git clone --recurse-submodules https://github.com/MinesoftCC/CCash
 mkdir build
 cd build
 sudo cmake -DCMAKE_BUILD_TYPE=Release ..
