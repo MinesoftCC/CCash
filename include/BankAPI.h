@@ -26,6 +26,7 @@ public:
   void AccountsRanked(reqArgs) const;
   void UsersRanked(reqArgs) const;
   void FindUser(reqArgs, const std::string &) const;
+  void ListUsers(reqArgs) const;
   void ListPerms(reqArgs, const std::string &) const;
   void ListAccounts(reqArgs, uint16_t) const;
   void Total(reqArgs, uint16_t) const;
@@ -46,6 +47,7 @@ public:
   METHOD_ADD(BankAPI::AccountsRanked, "/aranked", Get);
   METHOD_ADD(BankAPI::UsersRanked, "/uranked", Get);
   METHOD_ADD(BankAPI::FindUser, "/finduser/{username}", Get);
+  METHOD_ADD(BankAPI::ListUsers, "/listusers", Get);
   METHOD_ADD(BankAPI::ListPerms, "/listperms/{account_name}", Get);
   METHOD_ADD(BankAPI::ListAccounts, "/listaccounts/{id}", Get);
   METHOD_ADD(BankAPI::Total, "/total/{id}", Get);

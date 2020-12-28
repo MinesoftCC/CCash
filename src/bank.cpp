@@ -285,7 +285,15 @@ Json::Value Bank::UsersRanked() const
 Json::Value Bank::FindUser(const std::string &name) const
 {
     Json::Value resp;
-    std::string temp;
+    for (const auto &u : users)
+    {
+        resp[u.first] = u.second.name;
+    }
+    return resp;
+}
+Json::Value Bank::ListUsers() const
+{
+    Json::Value resp;
     for (const auto &u : users)
     {
         resp[u.first] = u.second.name;

@@ -33,6 +33,7 @@ public:
     Json::Value AccountsRanked() const;
     Json::Value UsersRanked() const;
     Json::Value FindUser(const std::string &name) const;
+    Json::Value ListUsers() const;
     Json::Value ListPerms(const std::string &account_name) const;
     Json::Value ListAccounts(uint16_t id) const;
     Json::Value Total(uint16_t id) const;

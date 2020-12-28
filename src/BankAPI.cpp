@@ -84,6 +84,10 @@ void BankAPI::FindUser(reqArgs, const std::string &name) const
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.FindUser(name)));
 }
+void BankAPI::ListUsers(reqArgs) const
+{
+    callback(HttpResponse::newHttpJsonResponse(this->internal.ListUsers()));
+}
 void BankAPI::ListPerms(reqArgs, const std::string &account_name) const
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.ListPerms(account_name)));
