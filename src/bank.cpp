@@ -313,7 +313,7 @@ Json::Value Bank::Total(uint16_t id) const
             sum += accounts.at(a).GetBal();
     }
     resp["name"] = users.at(id).name;
-    resp["perm count"] = (uint8_t)users.at(id).accounts.size();
+    resp["perm_count"] = (uint8_t)users.at(id).accounts.size();
     resp["balance"] = sum;
     return resp;
 }
