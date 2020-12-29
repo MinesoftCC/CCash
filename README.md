@@ -124,6 +124,7 @@ if you want to make a connected service for this webserver then check out `http:
 /BankAPI/aranked (GET)
 /BankAPI/uranked (GET)
 /BankAPI/finduser/{username} (GET)
+/BankAPI/listusers (Get)
 /BankAPI/listperms/{account_name} (GET)
 /BankAPI/listaccounts/{id} (GET)
 /BankAPI/total/{id} (GET)
