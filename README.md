@@ -62,6 +62,7 @@ all relevant commands/errors are logged in a drogon.txt file
 ```
 * max 100 accounts per user, be that owned or otherwise
 * While "CC" is through out this program OC works just as well, anything that can interact with HTTP can use it.
+* I know http is quite vulnerable but this is for MC and I doubt someone will have access to the servers traffic
 * If being accessed locally the CC config file's "blocked_domains" needs to have "127.0.0.0/8" removed
 * I could have used a database but considering the scale of this project that seemed a bit overkill.
 * I originally had multi-threaded everything but the overhead was greater then profit.
