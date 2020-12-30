@@ -44,14 +44,14 @@ Json::Value Bank::AddUser(const std::string &name, const std::string &pass, cons
         resp["value"] = 0;
         return resp;
     }
-    if(users.contains(user_id++))
+    if(users.contains(user_id))
     {
         resp["content"] = "user with the next id already exists";
         resp["value"] = 0;
         return resp;
     }
 
-    users.emplace(user_id, User(name, pass));
+    users.emplace(user_id++, User(name, pass));
     resp["content"] = "user added";
     resp["value"] = 1;
     LOG_INFO << "User \"" << name << "\" Added";
