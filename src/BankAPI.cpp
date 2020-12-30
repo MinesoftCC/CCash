@@ -36,7 +36,7 @@ void BankAPI::Save(reqArgs, const std::string &pass) const
 void BankAPI::Help(reqArgs) const
 {
     auto resp = HttpResponse::newHttpResponse();
-    resp->setBody("<p>/BankAPI/admin/close/{pass} (POST) <br />/BankAPI/admin/save/{pass} (POST) <br />/BankAPI/help (GET) <br />/BankAPI/admin/adduser/{name}/{pass}/{admin_pass} (POST) <br />/BankAPI/admin/deluser/{id}/{admin_pass} (POST) <br />/BankAPI/sendfunds/{from}/{to}/{amount}/{cred_id}/{from_pass} (POST) <br />/BankAPI/addaccount/{account_name}/{owner_id}/{owner_pass} (POST) <br />/BankAPI/admin/addaccount/{account_name}/{balance}/{owner_id}/{admin_pass} (POST) <br />/BankAPI/delaccount/{account_name}/{cred_id}/{pass} (POST) <br />/BankAPI/addperm/{account_name}/{new_id}/{perm}/{cred_id}/{cred_pass} (POST) <br />/BankAPI/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass} (POST) <br />/BankAPI/aranked (GET) <br />/BankAPI/uranked (GET) <br />/BankAPI/finduser/{username} (GET)<br />/BankAPI/listusers (GET)<br />/BankAPI/listperms/{account_name} (GET) <br />/BankAPI/listaccounts/{id} (GET) <br />/BankAPI/total/{id} (GET) <br />/BankAPI/vpass/{id}/{pass} (POST)</p>");
+    resp->setBody("Coming Soon");
     resp->setExpiredTime(0);
     callback(resp);
 }
