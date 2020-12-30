@@ -66,6 +66,13 @@ Json::Value Bank::DelUser(uint16_t id, const std::string &admin_pass)
         resp["value"] = 0;
         return resp;
     }
+
+    //perm cleanup when user is deleted
+    for(const auto& a : users.at(id).accounts)
+    {
+        accounts.at(a).user_certs.erase(id);
+    }
+
     users.erase(id);
     resp["content"] = "user deleted";
     resp["value"] = 1;
