@@ -335,6 +335,47 @@ Json::Value Bank::Total(uint16_t id) const
     resp["balance"] = sum;
     return resp;
 }
+Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass)
+{
+    Json::Value resp;
+    if(admin_pass != this->admin_pass)
+    {
+        resp["content"] = "invalid admin pass";
+        resp["value"] = 0;
+        return resp;
+    }
+    if (!accounts.contains(account_name))
+    {
+        resp["content"] = "account doesnt exist";
+        resp["value"] = 0;
+        return resp;
+    }
+    if (!users.contains(user_id))
+    {
+        resp["content"] = "user doesnt exist";
+        resp["value"] = 0;
+        return resp;
+    }
+    if (users.at(new_id).accounts.size() >= 100)
+    {
+        resp["content"] = "max account connections reached at 100";
+        resp["value"] = 0;
+        return resp;
+    }
+    if (accounts.at(account_name).user_certs.contains(new_id))
+    {
+        resp["content"] = "cant add cert as that user already has a perm";
+        resp["value"] = 0;
+        return resp;
+    }
+
+    accounts.at(account_name).user_certs.emplace(new_id, (Clearance)perm);
+    users.at(new_id).accounts.emplace(account_name);
+    resp["content"] = "perm added";
+    resp["value"] = 1;
+    LOG_INFO << "Perm Added for " << new_id << " with level " << perm;
+    return resp;
+}
 Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass)
 {
     Json::Value resp;

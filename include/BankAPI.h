@@ -21,6 +21,7 @@ public:
   void AddAccount(reqArgs, const std::string &, uint16_t, const std::string &);
   void AdminAddAccount(reqArgs, const std::string &, uint32_t, uint16_t, const std::string &);
   void DelAccount(reqArgs, const std::string &, uint16_t, const std::string &);
+  void AdminAddPerm(reqArgs, const std::string &, uint16_t , uint8_t , const std::string& );
   void AddPerm(reqArgs, const std::string &, uint16_t, uint8_t, uint16_t, const std::string &);
   void DelPerm(reqArgs, const std::string &, uint16_t, uint16_t, const std::string &);
   void AccountsRanked(reqArgs) const;
@@ -42,6 +43,7 @@ public:
   METHOD_ADD(BankAPI::AddAccount, "/addaccount/{account_name}/{owner_id}/{owner_pass}", Post);
   METHOD_ADD(BankAPI::AdminAddAccount, "/admin/addaccount/{account_name}/{balance}/{owner_id}/{admin_pass}", Post);
   METHOD_ADD(BankAPI::DelAccount, "/delaccount/{account_name}/{cred_id}/{pass}", Post);
+  METHOD_ADD(BankAPI::AdminAddPerm, "/admin/addperm/{account_name}/{new_id}/{perm}/{admin_pass}", Post);
   METHOD_ADD(BankAPI::AddPerm, "/addperm/{account_name}/{new_id}/{perm}/{cred_id}/{cred_pass}", Post);
   METHOD_ADD(BankAPI::DelPerm, "/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass}", Post);
   METHOD_ADD(BankAPI::AccountsRanked, "/aranked", Get);

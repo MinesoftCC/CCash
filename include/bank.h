@@ -28,6 +28,7 @@ public:
     Json::Value AddAccount(const std::string &account_name, uint16_t owner, const std::string &owner_pass);                   //client version
     Json::Value AddAccount(const std::string &account_name, uint32_t balance, uint16_t owner, const std::string &admin_pass); //admin version
     Json::Value DelAccount(const std::string &account_name, uint16_t cred_id, const std::string &pass);
+    Json::Value AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass);
     Json::Value AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass);
     Json::Value DelPerm(const std::string &account_name, uint16_t target_id, uint16_t cred_id, const std::string &cred_pass);
     Json::Value AccountsRanked() const;

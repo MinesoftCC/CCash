@@ -64,6 +64,10 @@ void BankAPI::DelAccount(reqArgs, const std::string &account_name, uint16_t cred
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.DelAccount(account_name, cred_id, pass)));
 }
+void BankAPI::AdminAddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass)
+{
+    callback(HttpResponse::newHttpJsonResponse(this->internal.AddPerm(account_name, new_id, perm, admin_pass)));
+}
 void BankAPI::AddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddPerm(account_name, new_id, perm, cred_id, cred_pass)));
