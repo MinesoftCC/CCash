@@ -229,8 +229,13 @@ Json::Value Bank::DelAccount(const std::string &account_name, uint16_t cred_id, 
         return resp;
     }
 
+    //cleanup
+    for(const auto& u : accounts.at(account_name).user_certs)
+    {
+        users.at(u.first).accounts.erase(account_name);
+    }
+
     accounts.erase(account_name);
-    users.at(cred_id).accounts.erase(account_name); //Remove Owner ref
     resp["content"] = "account deleted";
     resp["value"] = 1;
     LOG_INFO << "Account " << account_name << " Deleted by " << cred_id;
