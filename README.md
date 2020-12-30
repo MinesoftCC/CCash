@@ -133,3 +133,12 @@ if you want to make a connected service for this webserver then check out `http:
 /BankAPI/total/{id} (GET) 
 /BankAPI/vpass/{id}/{pass} (POST) 
 ```
+
+** Permissions
+
+```
+0:Specatator,   //can view log
+1:Collaborator, //can send money
+2:Manager,      //can del and add permission
+3:Admin,        //can del account
+```
