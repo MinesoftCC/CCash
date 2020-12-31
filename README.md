@@ -134,7 +134,7 @@ if you want to make a connected service for this webserver then check out `http:
 /BankAPI/vpass/{id}/{pass} (POST) 
 ```
 
-** Permissions
+**Permissions**
 
 ```
 0:Specatator,   //can view log
