@@ -34,7 +34,6 @@ public:
 
   METHOD_LIST_BEGIN
   METHOD_ADD(BankAPI::Close, "/admin/close/{pass}", Post);
-  METHOD_ADD(BankAPI::Save, "/admin/save/{pass}", Post);
   METHOD_ADD(BankAPI::Help, "/help", Get); //incomplete
   METHOD_ADD(BankAPI::AddUser, "/admin/adduser/{name}/{pass}/{admin_pass}", Post);
   METHOD_ADD(BankAPI::DelUser, "/admin/deluser/{id}/{admin_pass}", Post); //should be Delete but CC only has Post/Get
