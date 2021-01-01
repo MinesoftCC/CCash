@@ -11,7 +11,7 @@ uses https://github.com/an-tao/drogon for webserver/logging stuff
 ## Build
 
 ```
-sudo git clone --recurse-submodules https://github.com/MinesoftCC/CCash 
+git clone --recurse-submodules https://github.com/MinesoftCC/CCash 
 cd CCash
 sudo mkdir build
 cd build
@@ -68,24 +68,6 @@ all relevant commands/errors are logged in a drogon.txt file
 * I could have used a database but considering the scale of this project that seemed a bit overkill.
 * I originally had multi-threaded everything but the overhead was greater then profit.
 ```
-
-## Saving
-
-I heavily recommend using a script that saves the banks state every x minutes such as
-
-```
-10 * * * * curl -X POST http://127.0.0.1/BankAPI/admin/save/{password}
-# a cron job
-```
-
-how to use cron: https://opensource.com/article/17/11/how-use-cron-linux
-
-If you already have such a script for backing up the mc server I recommend appending
-a call to `http://127.0.0.1/BankAPI/admin/save/{password}` to it.
-If you dont save the state before shutting the server down the bank will be lost
-
-similiarly if you have a script for closing the server I recommend
-appending a `http://127.0.0.1/BankAPI/admin/close/{password}` call to it
 
 ## Connected Services
 

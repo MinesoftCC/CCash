@@ -12,7 +12,6 @@ public:
   BankAPI() = delete;
   BankAPI(const std::string &);
   void Close(reqArgs, const std::string &) const;
-  void Save(reqArgs, const std::string &) const;
 
   void Help(reqArgs) const;
   void AddUser(reqArgs, const std::string &, const std::string &, const std::string &);
