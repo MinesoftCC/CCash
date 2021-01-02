@@ -10,7 +10,6 @@ void BankAPI::Close(reqArgs, const std::string &pass) const
     auto resp = HttpResponse::newHttpResponse();
     if (this->internal.admin_pass == pass)
     {
-        this->internal.Save();
         resp->setBody("<p>[Webserver Closed]</p>");
         callback(resp);
         LOG_INFO << "Server Closed";
@@ -30,7 +29,6 @@ void BankAPI::Help(reqArgs) const
 void BankAPI::AddUser(reqArgs, const std::string &name, const std::string &pass, const std::string &admin_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddUser(name, pass, admin_pass)));
-    this->internal.Save();
 }
 void BankAPI::DelUser(reqArgs, uint16_t id, const std::string &admin_pass)
 {
