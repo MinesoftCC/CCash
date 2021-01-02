@@ -55,6 +55,7 @@ Json::Value Bank::AddUser(const std::string &name, const std::string &pass, cons
     resp["content"] = "user added";
     resp["value"] = 1;
     LOG_INFO << "User \"" << name << "\" Added";
+    Save();
     return resp;
 }
 Json::Value Bank::DelUser(uint16_t id, const std::string &admin_pass)
@@ -83,6 +84,7 @@ Json::Value Bank::DelUser(uint16_t id, const std::string &admin_pass)
     resp["content"] = "user deleted";
     resp["value"] = 1;
     LOG_INFO << "User \"" << id << "\" Deleted";
+    Save();
     return resp;
 }
 
@@ -103,6 +105,7 @@ Json::Value Bank::VerifyPassword(uint16_t id, const std::string attempt) const
     }
     resp["content"] = "password is correct";
     resp["value"] = 1;
+    Save();
     return resp;
 }
 
@@ -140,6 +143,7 @@ Json::Value Bank::SendFunds(const std::string &from, const std::string &to, uint
     resp["content"] = "funds sent";
     resp["value"] = 1;
     LOG_INFO << from << " sent " << to << " $" << amount;
+    Save();
     return resp;
 }
 Json::Value Bank::AddAccount(const std::string &account_name, uint16_t owner, const std::string &owner_pass) //client
@@ -194,6 +198,7 @@ Json::Value Bank::AddAccount(const std::string &account_name, uint16_t owner, co
     resp["content"] = "account added";
     resp["value"] = 1;
     LOG_INFO << "Account " << account_name << " Created by " << owner;
+    Save();
     return resp;
 }
 Json::Value Bank::AddAccount(const std::string &account_name, uint32_t balance, uint16_t owner, const std::string &admin_pass) //admin
@@ -217,6 +222,7 @@ Json::Value Bank::AddAccount(const std::string &account_name, uint32_t balance, 
     resp["content"] = "account added";
     resp["value"] = 1;
     LOG_INFO << "Account " << account_name << " Created for " << owner << " with balance of " << balance;
+    Save();
     return resp;
 }
 Json::Value Bank::DelAccount(const std::string &account_name, uint16_t cred_id, const std::string &pass)
@@ -245,6 +251,7 @@ Json::Value Bank::DelAccount(const std::string &account_name, uint16_t cred_id, 
     resp["content"] = "account deleted";
     resp["value"] = 1;
     LOG_INFO << "Account " << account_name << " Deleted by " << cred_id;
+    Save();
     return resp;
 }
 Json::Value Bank::ListAccounts(uint16_t id) const
@@ -374,6 +381,7 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
     resp["content"] = "perm added";
     resp["value"] = 1;
     LOG_INFO << "Perm Added for " << new_id << " with level " << perm;
+    Save();
     return resp;
 }
 Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass)
@@ -421,6 +429,7 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
     resp["content"] = "perm added";
     resp["value"] = 1;
     LOG_INFO << "Perm Added for " << new_id << " with level " << perm;
+    Save();
     return resp;
 }
 Json::Value Bank::DelPerm(const std::string &account_name, uint16_t target_id, uint16_t cred_id, const std::string &cred_pass) //manager perms required
@@ -455,6 +464,7 @@ Json::Value Bank::DelPerm(const std::string &account_name, uint16_t target_id, u
     resp["content"] = "perm deleted";
     resp["value"] = 1;
     LOG_INFO << "Perm of " << target_id << " has been Deleted";
+    Save();
     return resp;
 }
 Json::Value Bank::ListPerms(const std::string &account_name) const
@@ -491,7 +501,7 @@ void Bank::Save() const
         }
         writer->write(temp, &user_save);
         user_save.close();
-        LOG_INFO << "Users Saved";
+        //LOG_INFO << "Users Saved";
     }
     {
         std::ofstream account_save("accounts.json");
@@ -502,7 +512,7 @@ void Bank::Save() const
         }
         writer->write(temp, &account_save);
         account_save.close();
-        LOG_INFO << "Accounts Saved";
+        //LOG_INFO << "Accounts Saved";
     }
 }
 void Bank::Load()

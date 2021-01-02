@@ -35,42 +35,34 @@ void BankAPI::AddUser(reqArgs, const std::string &name, const std::string &pass,
 void BankAPI::DelUser(reqArgs, uint16_t id, const std::string &admin_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.DelUser(id, admin_pass)));
-    this->internal.Save();
 }
 void BankAPI::SendFunds(reqArgs, const std::string &from, const std::string &to, uint32_t amount, uint16_t cred_id, const std::string &from_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.SendFunds(from, to, amount, cred_id, from_pass)));
-    this->internal.Save();
 }
 void BankAPI::AddAccount(reqArgs, const std::string &account_name, uint16_t owner, const std::string &owner_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddAccount(account_name, owner, owner_pass)));
-    this->internal.Save();
 }
 void BankAPI::AdminAddAccount(reqArgs, const std::string &account_name, uint32_t balance, uint16_t owner, const std::string &admin_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddAccount(account_name, balance, owner, admin_pass)));
-    this->internal.Save();
 }
 void BankAPI::DelAccount(reqArgs, const std::string &account_name, uint16_t cred_id, const std::string &pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.DelAccount(account_name, cred_id, pass)));
-    this->internal.Save();
 }
 void BankAPI::AdminAddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddPerm(account_name, new_id, perm, admin_pass)));
-    this->internal.Save();
 }
 void BankAPI::AddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddPerm(account_name, new_id, perm, cred_id, cred_pass)));
-    this->internal.Save();
 }
 void BankAPI::DelPerm(reqArgs, const std::string &account_name, uint16_t target_id, uint16_t cred_id, const std::string &cred_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.DelPerm(account_name, target_id, cred_id, cred_pass)));
-    this->internal.Save();
 }
 void BankAPI::AccountsRanked(reqArgs) const
 {
