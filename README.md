@@ -90,11 +90,10 @@ if you wanted to you could have a seperate server full of CC webserver programs 
 
 if you want to make a connected service for this webserver then check out `http://127.0.0.1/BankAPI/help` for a list of the methods and there description
 
-**Commands**
+## Commands
 
 ```
 /BankAPI/admin/close/{pass} (POST) 
-/BankAPI/admin/save/{pass} (POST) 
 /BankAPI/help (GET) 
 /BankAPI/admin/adduser/{name}/{pass}/{admin_pass} (POST) 
 /BankAPI/admin/deluser/{id}/{admin_pass} (POST) 
@@ -115,7 +114,7 @@ if you want to make a connected service for this webserver then check out `http:
 /BankAPI/vpass/{id}/{pass} (POST) 
 ```
 
-**Permissions**
+## Permissions
 
 ```
 0:Specatator,   //can view
