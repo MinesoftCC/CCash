@@ -26,10 +26,9 @@ sudo ./CCash
 
 ```
 * In-game performance isn't impacted
-* Extremely Low Latency
+* Entirely in memory (although it saves to disk)
 * NOT written in lua lol
 * No overhead of virtualization
-* written in C++
 ```
 
 **Convenient**
