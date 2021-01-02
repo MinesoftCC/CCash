@@ -118,7 +118,7 @@ if you want to make a connected service for this webserver then check out `http:
 **Permissions**
 
 ```
-0:Specatator,   //can view log
+0:Specatator,   //can view
 1:Collaborator, //can send money
 2:Manager,      //can del and add permission
 3:Admin,        //can del account

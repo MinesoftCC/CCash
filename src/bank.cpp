@@ -526,15 +526,15 @@ void Bank::Load()
         JSONCPP_STRING errs;
         if (!parseFromStream(builder, user_save, &temp, &errs))
         {
-            LOG_DEBUG << "Loading Users ERROR: " << errs;
             user_save.close();
+            LOG_DEBUG << "Loading Users ERROR: " << errs;
         }
         else
         {
             user_save.close();
             LOG_INFO << "Parsing Users Suceeded";
             user_id = temp["id"].asUInt();
-            for (uint16_t i = 0; i < temp.size(); ++i)
+            for (uint16_t i = 0; i < temp["users"].size(); ++i)
             {
                 if (temp["users"].isValidIndex(i)) //excluding holes
                 {
