@@ -15,8 +15,11 @@ void BankAPI::Close(reqArgs, const std::string &pass) const
         LOG_INFO << "Server Closed";
         app().quit();
     }
-    resp->setBody("<p>[Invalid Password]</p>");
-    callback(resp);
+    else
+    {
+        resp->setBody("<p>[Invalid Password]</p>");
+        callback(resp);
+    }
 }
 
 void BankAPI::Help(reqArgs) const
@@ -50,7 +53,7 @@ void BankAPI::DelAccount(reqArgs, const std::string &account_name, uint16_t cred
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.DelAccount(account_name, cred_id, pass)));
 }
-void BankAPI::AdminAddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass)
+void BankAPI::AdminAddPerm(reqArgs, const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string &admin_pass)
 {
     callback(HttpResponse::newHttpJsonResponse(this->internal.AddPerm(account_name, new_id, perm, admin_pass)));
 }
