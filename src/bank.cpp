@@ -393,7 +393,7 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
         resp["value"] = 0;
         return resp;
     }
-    if (!users.contains(user_id))
+    if (!users.contains(new_id))
     {
         resp["content"] = "user doesnt exist";
         resp["value"] = 0;
