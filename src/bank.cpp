@@ -44,7 +44,7 @@ Json::Value Bank::AddUser(const std::string &name, const std::string &pass, cons
         resp["value"] = 0;
         return resp;
     }
-    if(users.contains(user_id))
+    if (users.contains(user_id))
     {
         resp["content"] = "user with the next id already exists";
         resp["value"] = 0;
@@ -75,7 +75,7 @@ Json::Value Bank::DelUser(uint16_t id, const std::string &admin_pass)
     }
 
     //perm cleanup when user is deleted
-    for(const auto& a : users.at(id).accounts)
+    for (const auto &a : users.at(id).accounts)
     {
         accounts.at(a).user_certs.erase(id);
     }
@@ -242,7 +242,7 @@ Json::Value Bank::DelAccount(const std::string &account_name, uint16_t cred_id, 
     }
 
     //cleanup
-    for(const auto& u : accounts.at(account_name).user_certs)
+    for (const auto &u : accounts.at(account_name).user_certs)
     {
         users.at(u.first).accounts.erase(account_name);
     }
@@ -342,10 +342,10 @@ Json::Value Bank::Total(uint16_t id) const
     resp["balance"] = sum;
     return resp;
 }
-Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string& admin_pass)
+Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string &admin_pass)
 {
     Json::Value resp;
-    if(admin_pass != this->admin_pass)
+    if (admin_pass != this->admin_pass)
     {
         resp["content"] = "invalid admin pass";
         resp["value"] = 0;
@@ -357,7 +357,7 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
         resp["value"] = 0;
         return resp;
     }
-    if (!users.contains(user_id))
+    if (!users.contains(new_id))
     {
         resp["content"] = "user doesnt exist";
         resp["value"] = 0;

@@ -20,7 +20,7 @@ public:
   void AddAccount(reqArgs, const std::string &, uint16_t, const std::string &);
   void AdminAddAccount(reqArgs, const std::string &, uint32_t, uint16_t, const std::string &);
   void DelAccount(reqArgs, const std::string &, uint16_t, const std::string &);
-  void AdminAddPerm(reqArgs, const std::string &, uint16_t , uint8_t , const std::string& );
+  void AdminAddPerm(reqArgs, const std::string &, uint16_t, uint8_t, const std::string &);
   void AddPerm(reqArgs, const std::string &, uint16_t, uint8_t, uint16_t, const std::string &);
   void DelPerm(reqArgs, const std::string &, uint16_t, uint16_t, const std::string &);
   void AccountsRanked(reqArgs) const;
@@ -51,6 +51,6 @@ public:
   METHOD_ADD(BankAPI::ListPerms, "/listperms/{account_name}", Get);
   METHOD_ADD(BankAPI::ListAccounts, "/listaccounts/{id}", Get);
   METHOD_ADD(BankAPI::Total, "/total/{id}", Get);
-  METHOD_ADD(BankAPI::VerifyPassword, "/vpass/{id}/{pass}", Post);
+  METHOD_ADD(BankAPI::VerifyPassword, "/verfiypass/{id}/{pass}", Post);
   METHOD_LIST_END
 };

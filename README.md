@@ -11,7 +11,7 @@ uses https://github.com/an-tao/drogon for webserver/logging stuff
 ## Build
 
 ```
-git clone --recurse-submodules https://github.com/MinesoftCC/CCash 
+git clone --recurse-submodules https://github.com/MinesoftCC/CCash
 cd CCash
 sudo mkdir build
 cd build
@@ -93,25 +93,25 @@ if you want to make a connected service for this webserver then check out `http:
 ## Commands
 
 ```
-/BankAPI/admin/close/{pass} (POST) 
-/BankAPI/help (GET) 
-/BankAPI/admin/adduser/{name}/{pass}/{admin_pass} (POST) 
-/BankAPI/admin/deluser/{id}/{admin_pass} (POST) 
-/BankAPI/sendfunds/{from}/{to}/{amount}/{cred_id}/{from_pass} (POST) 
-/BankAPI/addaccount/{account_name}/{owner_id}/{owner_pass} (POST) 
-/BankAPI/admin/addaccount/{account_name}/{balance}/{owner_id}/{admin_pass} (POST) 
-/BankAPI/delaccount/{account_name}/{cred_id}/{pass} (POST) 
-/BankAPI/admin/addperm/{account_name}/{new_id}/{perm}/{admin_pass} (POST) 
-/BankAPI/addperm/{account_name}/{new_id}/{perm}/{cred_id}/{cred_pass} (POST) 
-/BankAPI/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass} (POST) 
-/BankAPI/aranked (GET) 
-/BankAPI/uranked (GET) 
-/BankAPI/finduser/{username} (GET) 
-/BankAPI/listusers (GET) 
-/BankAPI/listperms/{account_name} (GET) 
-/BankAPI/listaccounts/{id} (GET) 
-/BankAPI/total/{id} (GET) 
-/BankAPI/vpass/{id}/{pass} (POST) 
+/BankAPI/admin/close/{pass} (POST)
+/BankAPI/help (GET)
+/BankAPI/admin/adduser/{name}/{pass}/{admin_pass} (POST)
+/BankAPI/admin/deluser/{id}/{admin_pass} (POST)
+/BankAPI/sendfunds/{from}/{to}/{amount}/{cred_id}/{from_pass} (POST)
+/BankAPI/addaccount/{account_name}/{owner_id}/{owner_pass} (POST)
+/BankAPI/admin/addaccount/{account_name}/{balance}/{owner_id}/{admin_pass} (POST)
+/BankAPI/delaccount/{account_name}/{cred_id}/{pass} (POST)
+/BankAPI/admin/addperm/{account_name}/{new_id}/{perm}/{admin_pass} (POST)
+/BankAPI/addperm/{account_name}/{new_id}/{perm}/{cred_id}/{cred_pass} (POST)
+/BankAPI/delperm/{account_name}/{target_id}/{cred_id}/{cred_pass} (POST)
+/BankAPI/aranked (GET)
+/BankAPI/uranked (GET)
+/BankAPI/finduser/{username} (GET)
+/BankAPI/listusers (GET)
+/BankAPI/listperms/{account_name} (GET)
+/BankAPI/listaccounts/{id} (GET)
+/BankAPI/total/{id} (GET)
+/BankAPI/verfiypass/{id}/{pass} (POST)
 ```
 
 ## Permissions
