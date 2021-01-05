@@ -342,7 +342,7 @@ Json::Value Bank::Total(uint16_t id) const
     resp["balance"] = sum;
     return resp;
 }
-Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, const std::string &admin_pass)
+Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint16_t perm, const std::string &admin_pass)
 {
     Json::Value resp;
     if (admin_pass != this->admin_pass)
@@ -384,7 +384,7 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
     Save();
     return resp;
 }
-Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint8_t perm, uint16_t cred_id, const std::string &cred_pass)
+Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint16_t perm, uint16_t cred_id, const std::string &cred_pass)
 {
     Json::Value resp;
     if (!accounts.contains(account_name))
@@ -417,7 +417,8 @@ Json::Value Bank::AddPerm(const std::string &account_name, uint16_t new_id, uint
         resp["value"] = 0;
         return resp;
     }
-    if ((Clearance)perm > accounts.at(account_name).user_certs.at(cred_id)) //cant create perms higher then your own
+    std::cout << (int)perm << ' ' << (int)accounts.at(account_name).user_certs.at(cred_id) << '\n';
+    if (perm > (int)accounts.at(account_name).user_certs.at(cred_id))
     {
         resp["content"] = "unable to create perms higher then your own";
         resp["value"] = 0;

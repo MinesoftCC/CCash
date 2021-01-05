@@ -20,8 +20,8 @@ public:
   void AddAccount(reqArgs, const std::string &, uint16_t, const std::string &);
   void AdminAddAccount(reqArgs, const std::string &, uint32_t, uint16_t, const std::string &);
   void DelAccount(reqArgs, const std::string &, uint16_t, const std::string &);
-  void AdminAddPerm(reqArgs, const std::string &, uint16_t, uint8_t, const std::string &);
-  void AddPerm(reqArgs, const std::string &, uint16_t, uint8_t, uint16_t, const std::string &);
+  void AdminAddPerm(reqArgs, const std::string &, uint16_t, uint16_t, const std::string &);
+  void AddPerm(reqArgs, const std::string &, uint16_t, uint16_t, uint16_t, const std::string &);
   void DelPerm(reqArgs, const std::string &, uint16_t, uint16_t, const std::string &);
   void AccountsRanked(reqArgs) const;
   void UsersRanked(reqArgs) const;
