@@ -5,7 +5,7 @@ project(CCash)
 add_executable(${PROJECT_NAME} backend.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_include_directories(${PROJECT_NAME} PUBLIC third_party/parallel_hashmap)
+target_include_directories(${PROJECT_NAME} PUBLIC third_party)
 target_sources(${PROJECT_NAME} PRIVATE src/bank.cpp PRIVATE src/BankAPI.cpp)
 
 add_subdirectory(third_party/drogon)

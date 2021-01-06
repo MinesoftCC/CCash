@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "../third_party/parallel-hashmap/parallel_hashmap/phmap.h"
+#include <parallel-hashmap/parallel_hashmap/phmap.h>
 
 struct User
 {
