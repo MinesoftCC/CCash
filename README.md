@@ -17,7 +17,7 @@ sudo mkdir build
 cd build
 sudo cmake -DCMAKE_BUILD_TYPE=Release ..
 sudo make
-sudo ./CCash
+sudo ./CCash root true
 ```
 
 ## Features
