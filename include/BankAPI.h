@@ -51,6 +51,6 @@ public:
   METHOD_ADD(BankAPI::ListPerms, "/listperms/{account_name}", Get);
   METHOD_ADD(BankAPI::ListAccounts, "/listaccounts/{id}", Get);
   METHOD_ADD(BankAPI::Total, "/total/{id}", Get);
-  METHOD_ADD(BankAPI::VerifyPassword, "/verfiypass/{id}/{pass}", Post);
+  METHOD_ADD(BankAPI::VerifyPassword, "/verifypass/{id}/{pass}", Get);
   METHOD_LIST_END
 };
