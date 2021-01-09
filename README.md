@@ -111,7 +111,7 @@ if you want to make a connected service for this webserver then check out `http:
 /BankAPI/listperms/{account_name} (GET)
 /BankAPI/listaccounts/{id} (GET)
 /BankAPI/total/{id} (GET)
-/BankAPI/verfiypass/{id}/{pass} (POST)
+/BankAPI/verifypass/{id}/{pass} (POST)
 ```
 
 ## Permissions
