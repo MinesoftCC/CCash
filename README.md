@@ -77,7 +77,7 @@ if you wanted to you could have a seperate server full of CC webserver programs 
 ```
 * Leaderboard, this just basically continually calls uranked and aranked            [found at https://github.com/MinesoftCC/CCServices/tree/main/Leaderboard]
 * ATM for exchanging a chosen resource like diamonds or netherite and bank currency [found at https://github.com/MinesoftCC/CCServices/tree/main/ATM]
-* Market, Jolly is working on implementing a market                                 [found in https://github.com/MinesoftCC/market-api]
+* Market, written by Sam                                                            [found at https://github.com/MinesoftCC/market-api]
 ```
 
 :construction: just ideas:
