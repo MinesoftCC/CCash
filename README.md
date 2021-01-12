@@ -15,7 +15,7 @@ git clone --recurse-submodules https://github.com/MinesoftCC/CCash
 cd CCash
 sudo mkdir build
 cd build
-sudo cmake -DCMAKE_BUILD_TYPE=Release ..
+sudo cmake ..
 sudo make
 sudo ./CCash root true
 ```
