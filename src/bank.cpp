@@ -48,6 +48,7 @@ Json::Value Bank::AddUser(const std::string &name, const std::string &pass, cons
     {
         resp["content"] = "user with the next id already exists";
         resp["value"] = 0;
+        ++user_id; //increment so that next request may work
         return resp;
     }
 
