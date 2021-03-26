@@ -24,49 +24,37 @@ sudo ./CCash root true
 
 **Performance**
 
-```
 * In-game performance isn't impacted
 * Entirely in memory (although it saves to disk)
 * NOT written in lua lol
 * No overhead of virtualization
-```
 
 **Convenient**
 
-```
 you can use the bank anywhere, irregardless of position or server even.
 In the future a client program or web browser interface could be made
-```
 
 **Low Cost in-game**
 
-```
 any computer in CC can use the bank, no ender modem or advanced computer required
-```
 
 **Security**
 
-```
 compared to an in-game implementation that can be destroyed, modified, or hacked.
 The amount of effort to compromise this external solution would be much higher
-```
 
 **Logging**
 
-```
 all relevant commands/errors are logged in a drogon.txt file
-```
 
 ## Notes:
 
-```
 * max 100 accounts per user, be that owned or otherwise
 * While "CC" is through out this program OC works just as well, anything that can interact with HTTP can use it.
 * I know http is quite vulnerable but this is for MC and I doubt someone will have access to the servers traffic
 * If being accessed locally the CC config file's "blocked_domains" needs to have "127.0.0.0/8" removed
 * I could have used a database but considering the scale of this project that seemed a bit overkill.
 * I originally had multi-threaded everything but the overhead was greater then profit.
-```
 
 ## Connected Services
 
@@ -74,19 +62,15 @@ if you wanted to you could have a seperate server full of CC webserver programs 
 
 :sparkles:implemented:
 
-```
 * Leaderboard, this just basically continually calls uranked and aranked            [found at https://github.com/MinesoftCC/CCServices/tree/main/Leaderboard]
 * ATM for exchanging a chosen resource like diamonds or netherite and bank currency [found at https://github.com/MinesoftCC/CCServices/tree/main/ATM]
 * Market, written by Sam                                                            [found at https://github.com/MinesoftCC/market-api]
-```
 
 :construction: just ideas:
 
-```
 * Gambling
 * Delivery Service, could act as an extension to the market
 * a Cute front-end
-```
 
 if you want to make a connected service for this webserver then check out `http://127.0.0.1/BankAPI/help` for a list of the methods and there description
 
