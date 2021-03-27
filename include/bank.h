@@ -10,8 +10,8 @@ class Bank
 {
 private:
     uint16_t user_id = 0; //assuming less then 2^16 users will be registered
-    phmap::flat_hash_map<uint16_t, User> users;
-    phmap::flat_hash_map<std::string, Account> accounts; //max of (2^16)*100
+    phmap::parallel_node_hash_map<uint16_t, User> users;
+    phmap::parallel_flat_hash_map<std::string, Account> accounts; //max of (2^16)*100
 
     //internal implementation
     bool ValidCreds(const std::string &cred_pass, const Account &account_name, uint16_t cred_id, Clearance level);
