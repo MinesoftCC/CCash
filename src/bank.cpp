@@ -313,7 +313,10 @@ Json::Value Bank::FindUser(const std::string &name) const
     Json::Value resp;
     for (const auto &u : users)
     {
-        resp[u.first] = u.second.name;
+        if (std::search(u.second.name.begin(), u.second.name.end(), name.begin(), name.end()) != name.end())
+        {
+            resp[u.first] = u.second.name;
+        }
     }
     return resp;
 }
