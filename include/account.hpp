@@ -9,7 +9,7 @@ private:
     uint32_t balance;
 
 public:
-    phmap::node_hash_map<uint16_t, Clearance> user_certs; //Bank owner backdoor
+    phmap::parallel_flat_hash_map<uint16_t, Clearance> user_certs; //(Max size of 2^16)
     Account(uint32_t balance) : balance(balance) {}
     Account(uint32_t balance, uint16_t owner) : balance(balance)
     {
