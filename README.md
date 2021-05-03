@@ -15,6 +15,7 @@ sudo apt install libjsoncpp-dev
 sudo apt install uuid-dev
 sudo apt install openssl
 sudo apt install libssl-dev
+sudo apt install zlib1g-dev
 ```
 building this program
 ```
