@@ -9,7 +9,14 @@ uses https://github.com/greg7mdp/parallel-hashmap for the hashmap
 uses https://github.com/an-tao/drogon for webserver/logging stuff
 
 ## Build
-
+drogon depedencies
+```
+sudo apt install libjsoncpp-dev
+sudo apt install uuid-dev
+sudo apt install openssl
+sudo apt install libssl-dev
+```
+building this program
 ```
 git clone --recurse-submodules https://github.com/MinesoftCC/CCash
 cd CCash
